@@ -8,7 +8,7 @@ pipeline {
         stage('build') {
             steps {
                 echo  'building the application'
-				echo 'build app ${Branches}
+				echo "build app ${Branches}"
             }
         }
 	}	
