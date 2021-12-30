@@ -1,7 +1,7 @@
 # Pull base image1 
 From tomcat:8-jre8 
 
-# Maintainer 
+# Maintainere 
 MAINTAINER "valaxytech@gmail.com" 
 COPY ./webapp.war /usr/local/tomcat/webapps
 
