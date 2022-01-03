@@ -1,9 +1,13 @@
 pipeline {
     agent any
+         tools {
+        maven 'Maven'
+    }
     stages {
 	    stage ('Checkout'){
 		 steps {
-		 checkout([$class: 'GitSCM', branches: [[name: '*/develop']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/stgit3/testprj.git']]])
+		 checkout([$class: 'GitSCM', branches: [[name: '**/tags/*']], extensions: [], userRemoteConfigs: [[refspec: '+refs/heads/develop:refs/remotes/origin/develop', url: 'https://github.com/stgit3/testprj.git']]])
+		}
 		}
         stage('Build') {
             steps {
