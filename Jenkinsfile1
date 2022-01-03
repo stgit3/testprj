@@ -7,14 +7,7 @@ pipeline {
 		}
         stage('Build') {
             steps {
-                sh 'make package'
-            }
-        }
-        stage('uploads3') {
-            when { tag "release-*" }
-            steps {
-                echo 'upload only because this commit is tagged...'
-                
+                sh 'mvn clean install package'
             }
         }
     }
