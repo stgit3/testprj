@@ -218,3 +218,43 @@
   </prerequisites>
 
 </project>
+         <build>
+        <extensions>
+            <extension>
+                <groupId>com.example.maven-project</groupId>
+                <artifactId>maven-project</artifactId>
+                <version>3.8.0</version>
+            </extension>
+        </extensions>
+    </build>
+    <distributionManagement>
+        <repository>
+            <id>com.example.maven-project</id>
+            <url>s3://s34s5/release</url>
+        </repository>
+        <snapshotRepository>
+            <id>com.example.maven-project</id>
+            <url>s3://s34s5/snapshot</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>
+   <repositories>
+        <repository>
+            <id>com.example.maven-project</id>
+            <url>s3://s34s5/release</url>
+        </repository>
+<repository>
+            <id>com.example.maven-project</id>
+            <url>s3://s34s5/snapshot</url>
+        </repository>
+    </repositories>
+    <build>
+        <extensions>
+            <extension>
+                <groupId>com.example.maven-project</groupId>
+                <artifactId>maven-s3-wagon</artifactId>
+                <version>3.8.0</version>
+            </extension>
+        </extensions>
+    </build>
+</project>
